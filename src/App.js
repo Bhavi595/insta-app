@@ -2,17 +2,19 @@ import react ,{useState}from "react";
 import Signin from "./components/Signin.js";
 import Login from "./components/Login.js"
 import Deskboard from "./components/Deskboard.js";
+import { Route , Routes } from "react-router-dom";
 
 
 
 
 const App = ()=>{
-
-    const [token , SetToken] = useState();
+    
     return <div>
-        <Signin     SetToken={SetToken}/>
-        <Login      SetToken={SetToken}/>
-        <Deskboard  token   ={token}   />
+         <Routes>
+             <Route path="/" element={<Signin/>}/>
+             <Route path="/Login" element={<Login/>}/>
+             <Route path="/Deskboard" element={<Deskboard/>}/>
+         </Routes>
     </div>
 }
 
